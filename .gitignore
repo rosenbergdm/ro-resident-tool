@@ -1,0 +1,11 @@
+__py*
+*.pyc
+build/*
+settings.json
+**/.eslintrc*
+.idea
+.venv
+.pylintrc
+.vim/
+.bak
+*/*.egg-info*
