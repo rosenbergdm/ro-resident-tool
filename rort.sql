@@ -1,3 +1,11 @@
+CREATE TABLE treatment_type (
+  id SERIAL NOT NULL,
+  intent INTEGER REFERENCES intents.id,
+  category INTEGER REFERENCES categories.id
+  -- INCOMPLETE
+)
+
+
 CREATE TABLE hospital (
   id SERIAL NOT NULL,
   name VARCHAR(128)
