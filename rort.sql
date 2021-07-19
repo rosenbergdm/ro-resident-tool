@@ -1,7 +1,17 @@
+CREATE TABLE intent (
+  id SERIAL NOT NULL,
+  -- INCOMPLETE
+)
+
+CREATE TABLE category (
+  id SERIAL NOT NULL,
+  -- INCOMPLETE
+)
+
 CREATE TABLE treatment_type (
   id SERIAL NOT NULL,
-  intent INTEGER REFERENCES intents.id,
-  category INTEGER REFERENCES categories.id
+  intent INTEGER REFERENCES intent.id,
+  category INTEGER REFERENCES category.id
   -- INCOMPLETE
 )
 
@@ -19,7 +29,7 @@ CREATE TABLE patient (
   fullname VARCHAR(128) DEFAULT NULL, -- Only if the first / last thing doesnt work
   dob DATE DEFAULT NULL,
   mrn INTEGER NOT NULL,
-  hospital INTEGER NOT NULL REFERENCES hospitals.id
+  hospital INTEGER NOT NULL REFERENCES hospital.id
 
 
 
