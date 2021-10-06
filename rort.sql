@@ -35,12 +35,26 @@ CREATE TABLE patient (
   hospital INTEGER NOT NULL REFERENCES hospital.id,
   patient_status INTEGER NOT NULL REFERENCES status.id,
   disease_site VARCHAR(64),
-  attending,
-
-  -- for later malignancy INTEGER NOT NULL REFERENCES malignancy.id,
+  attending varchar(64),
+  intent varchar(32),
+  diagnosis text,
+  summary_line text,
+  status varchar(32), -- on treatment, pending, ...
+  plan text,
+  chemo text default NULL,
+  contours_complete boolean default false,
+  contour_notes text,
+  plan_eval boolean default false,
+  plan_notes text,
+  chart_rounds boolean default false,
+  completion_summary boolean default false,
   first_seen DATE DEFAULT NULL,
   last_seen DATE DEFAULT NULL,
-  last_seen_notes TEXT,
+  last_seen_notes text
+);
+
+create table toxicity
+
   -- things to ref back in tables:
   -- events
   -- toxicities
@@ -54,15 +68,15 @@ CREATE TABLE patient (
   -- consult 
   -- lab values of note 
   -- path 
+
+
+
+
   
 
 
-  
 
 
-
-
-);
 
 
 CREATE TABLE comorbidity (
